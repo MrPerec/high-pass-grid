@@ -1,0 +1,297 @@
+@import "_mixins.scss";
+@import "_variables.scss";
+
+.header {
+  padding-top: 25px;
+  padding-bottom: 24px;
+  background-color: $colorMineShaft;
+
+  &__container {
+    @include setContainerStyles();
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+  }
+
+  &__logo-container {
+    @include clearPictureStyles();
+    @include clearLinkStyles();
+    width: max-content;
+    grid-column: span 3;
+  }
+
+  &__logo-image {
+    @include setLogoStyle();
+  }
+
+  .nav {
+    grid-column: 4 / span 8;
+    padding-left: 7px;
+
+    &__list {
+      @include clearListStyles();
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4.14vw;
+      font-family: $fontFamilySecond, $fontFamilyBase;
+      font-weight: 400;
+      font-size: 16px;
+      color: $colorWhiteSolid;
+    }
+
+    &__item {
+      max-width: 125px;
+    }
+
+    &__item:last-child {
+      position: absolute;
+      bottom: 38px;
+      display: none;
+    }
+
+    &__link {
+      @include clearLinkStyles();
+      outline-offset: 0;
+      outline: transparent;
+      transition: background-color $delay, color $delay, outline $delay;
+    }
+
+    &__link:focus {
+      color: $colorWhiteSolid;
+      background-color: $colorTuscany;
+      outline: 5px solid $colorTuscany;
+    }
+    &__link:hover {
+      color: $colorBurningOrange;
+    }
+    &__link:active {
+      color: $colorGrenadier;
+      background-color: transparent;
+      outline: transparent;
+    }
+
+    &__phone-link {
+      @include setPhoneStyle();
+    }
+
+    &__burger-btn {
+      @include clearBtnStyles;
+      position: relative;
+      display: none;
+      width: 20px;
+      height: 18px;
+      background-color: transparent;
+    }
+
+    &__burger {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: $colorWhiteSolid;
+    }
+
+    &__burger::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: $colorWhiteSolid;
+    }
+
+    &__burger::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 10px;
+      height: 2px;
+      background-color: $colorWhiteSolid;
+    }
+
+    &__close-btn {
+      @include clearBtnStyles;
+      position: absolute;
+      top: -3px;
+      display: none;
+      height: 18px;
+      background: transparent;
+    }
+
+    &__close-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .search {
+    position: relative;
+    grid-column: 12;
+    display: flex;
+    justify-content: flex-end;
+    height: 25px;
+
+    &__input {
+      position: absolute;
+      top: 3px;
+      display: none;
+      margin-right: 40px;
+      font-size: 16px;
+      color: $colorWhiteSolid;
+      overflow: hidden;
+      border: none;
+      border-bottom: 1px solid $colorMercury;
+      background-color: $colorMineShaft;
+    }
+    &__input::placeholder {
+      color: $colorMercury;
+    }
+
+    &__open-btn {
+      @include clearBtnStyles();
+      position: absolute;
+      line-height: 0;
+      background-color: transparent;
+    }
+
+    &__open-icon {
+      width: 25px;
+      height: 25px;
+    }
+
+    &__close-btn {
+      @include clearBtnStyles();
+      position: absolute;
+      display: none;
+      padding-right: 2px;
+      line-height: 0;
+      background: transparent;
+    }
+
+    &__close-icon {
+      width: 23px;
+      height: 23px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding-top: 27px;
+    padding-bottom: 26px;
+
+    .nav {
+      &__list {
+        gap: 3.25vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    position: relative;
+    padding-top: 27px;
+    padding-bottom: 71px;
+
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &__logo-container {
+      grid-column: span 2;
+    }
+
+    .nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 12px 27px;
+      background-color: $colorTundora;
+
+      &__list {
+        justify-content: space-between;
+      }
+    }
+
+    .search {
+      grid-column: 6;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding-top: 25px;
+    padding-bottom: 72px;
+
+    &__logo-container {
+      grid-column: span 3;
+    }
+
+    // если бургер не нажат
+    .nav {
+      padding: 14px 21px;
+
+      &__list {
+        display: none;
+      }
+
+      &__item:last-child {
+        display: block;
+      }
+
+      &__burger-btn {
+        display: block;
+      }
+    }
+
+    // если кнопка бургера нажата
+    .nav-open {
+      &__list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: $gridGutter;
+        padding: 31px 20px;
+        height: 92vh;
+        width: 100%;
+        background-color: #202020;
+      }
+      &__item {
+        max-width: 100%;
+      }
+    }
+
+    .search {
+      position: absolute;
+      left: 0;
+      padding: 0 21px;
+      width: 100%;
+      max-width: 100%;
+      height: 18px;
+
+      &__input {
+        position: relative;
+        top: 0;
+        width: 100%;
+      }
+
+      &__open-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      &__close-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}

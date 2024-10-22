@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Фотостудия Hight pass</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script defer src="./libs/gsap.min.js"></script>
+  <script defer src="./js/main.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preload" href="./fonts/Roboto-Bold.woff" as="font" />
+  <link rel="preload" href="./fonts/Roboto-Regular.woff" as="font" />
+  <link rel="preload" href="./fonts/TTFirsNeue-Bold.woff2" as="font" />
+  <link rel="preload" href="./fonts/TTFirsNeue-Medium.woff2" as="font" />
+  <link rel="preload" href="./fonts/TTFirsNeue-Regular.woff2" as="font" />
+</head>
+
+<body class="body">
+  <header class="header">
+    <div class="container header__container">
+      <a class="header__logo-container"
+         aria-label="Логотип сайта Фотостудия Hight pass">
+        <picture class="header__logo-picture">
+          <source media="(max-width: 576px)" srcset="./img/logo_mobile.png">
+          <source media="(max-width: 960px)" srcset="./img/logo_tablet.png">
+          <img class="header__logo-image" src="./img/logo_desk.png" alt="" aria-hidden="true">
+        </picture>
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#about"
+               aria-label="Ссылка перехода в раздел О студии">О&nbsp;студии</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#projects"
+               aria-label="Ссылка перехода в раздел Наши проекты">Наши проекты</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#services"
+               aria-label="Ссылка перехода в раздел Услуги">Услуги</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#hero"
+               aria-label="Ссылка перехода в раздел Мастер-классы">Мастер-классы</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#contacts"
+               aria-label="Ссылка перехода в раздел Контакты">Контакты</a>
+          </li>
+          <li class="nav__item">
+            <address class="nav__phone">
+              <a class="nav__phone-link" href="tel:+49542423532">+7&nbsp;495 424-23-532</a>
+            </address>
+          </li>
+        </ul>
+        <button class="nav__burger-btn js-open-menu" aria-label="Открыть меню">
+          <span class="nav__burger"></span>
+        </button>
+        <button class="btn-link nav__close-btn js-close-menu" aria-label="Закрыть меню">
+          <svg class="nav__close-icon">
+            <use xlink:href="./img/sprite.svg#close-icon"></use>
+          </svg>
+        </button>
+      </nav>
+      <div class="search">
+        <input class="search__input" type="text" id="search" name="search" placeholder="Что будем иcкать?">
+        <button class="btn-link search__open-btn js-open-search" aria-label="Открыть поиск">
+          <svg class="search__open-icon">
+            <use xlink:href="./img/sprite.svg#search-icon"></use>
+          </svg>
+        </button>
+        <button class="btn-link search__close-btn js-close-search" aria-label="Закрыть поиск">
+          <svg class="search__close-icon">
+            <use xlink:href="./img/sprite.svg#close-icon"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="hero" id="hero">
+      <div class="container hero__container">
+        <h1 class="main-title sr-only" aria-hidden="true">Фотостудия Hight pass</h1>
+        <article class="hero__card">
+          <span class="hero__card-label">#мастеркласс</span>
+          <div class="hero__card-wrap">
+            <p class="hero__card-paragraph">Мастер-класс от&nbsp;Игоря Робова</p>
+            <h3 class="hero__card-title">Неоновый фотосет 2.0 <time class="hero__card-date"
+                    datetime="07-07">7&nbsp;июля</time>
+              <time class="hero__card-time" datetime="20:00:00.000">20:00</time>
+            </h3>
+            <a class="btn hero__card-link" href="#" target="_blank" rel="noopener noreferrer"
+               aria-label="Кнопка-ссылка Узнать больше">Узнать больше</a>
+          </div>
+        </article>
+        <div class="hero__wrap">
+          <h2 class="hero__title">Работы участников предыдущего мастер-класса</h2>
+          <picture class="hero__picture hero__picture_large">
+            <source media="(max-width: 576px)" srcset="./img/hero-1_mobile.jpg">
+            <source media="(max-width: 960px)" srcset="./img/hero-1_tablet.jpg">
+            <source media="(max-width: 1024px)" srcset="./img/hero-1_desk-small.jpg">
+            <img class="hero__image hero__image_large" src="./img/hero-1_desk-large.jpg"
+                 alt="Фотография девушки рядом с неоновой вывеской">
+          </picture>
+          <picture class="hero__picture hero__picture_small">
+            <source media="(max-width: 576px)" srcset="./img/hero-2_mobile.jpg">
+            <source media="(max-width: 960px)" srcset="./img/hero-2_tablet.jpg">
+            <source media="(max-width: 1024px)" srcset="./img/hero-2_desk-small.jpg">
+            <img class="hero__image hero__image_small" src="./img/hero-2_desk-large.jpg"
+                 alt="Фотография девушки на фоне неоновой вывеской">
+          </picture>
+          <picture class="hero__picture hero__picture_small">
+            <source media="(max-width: 576px)" srcset="./img/hero-3_mobile.jpg">
+            <source media="(max-width: 960px)" srcset="./img/hero-3_tablet.jpg">
+            <source media="(max-width: 1024px)" srcset="./img/hero-3_desk-small.jpg">
+            <img class="hero__image hero__image_small" src="./img/hero-3_desk-large.jpg"
+                 alt="Фотография девушки на фоне разноцветно-светящейся улицы">
+          </picture>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="container about__container">
+        <h2 class="about__title">О&nbsp;студии</h2>
+        <p class="about__paragraph">
+          В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно
+          синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны:
+          высокотехнологичная концепция общественного уклада требует от&nbsp;нас анализа соответствующих
+          условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует
+          необходимость
+          распределения внутренних резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие
+          возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень
+          погружения предполагает независимые способы реализации новых принципов формирования материально-технической
+          и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только
+          методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.
+        </p>
+        <div class="about__wrap">
+          <picture class="about__picture">
+            <source media="(max-width: 576px)" srcset="./img/about_mobile.jpg">
+            <source media="(max-width: 960px)" srcset="./img/about_tablet.jpg">
+            <source media="(max-width: 1024px)" srcset="./img/about_desk-small.jpg">
+            <img class="about__image" src="./img/about_desk-large.jpg" alt="" aria-hidden="true">
+          </picture>
+          <h3 class="about__subtitle">Подписаться на&nbsp;рассылку</h3>
+          <form class="about__form js-form" action="#" method="post">
+            <input class="input about__input" id="about-email" type="email" name="about-email"
+                   placeholder="Email"
+                   pattern="^(?!.*@.*@.*$)(?!.*@.*--.*\..*$)(?!.*@.*-\..*$)(?!.*@.*-$)((.*)?@.+(\..{1,11})?)$"
+                   aria-label="Поле для ввода адреса электронной почты">
+            <span class="validity-text">Заполните это поле.</span>
+            <button class="btn about__btn" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <div class="projects__container">
+        <h2 class="projects__title">Наши проекты</h2>
+        <ul class="projects__list">
+          <li class="projects__item projects__item_small">
+            <article class="projects__card">
+              <div class="projects__picture-wrap">
+                <picture class="projects__picture">
+                  <source media="(max-width: 576px)" srcset="./img/projects-forest_mobile.jpg">
+                  <source media="(max-width: 1024px)" srcset="./img/projects-forest_tablet.jpg">
+                  <img class="projects__image" src="./img/projects-forest_desk.jpg" alt="" aria-hidden="true">
+                </picture>
+                <span class="projects__label">#пейзаж</span>
+              </div>
+              <h2 class="projects__card-title">
+                <a class="projects__card-link" href="#">
+                  Синтетически, смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени...
+                </a>
+              </h2>
+              <time class="projects__date" datetime="06-16">16&nbsp;июня</time>
+            </article>
+          </li>
+          <li class="projects__item projects__item_small">
+            <article class="projects__card">
+              <div class="projects__picture-wrap">
+                <picture class="projects__picture">
+                  <source media="(max-width: 576px)" srcset="./img/projects-man_mobile.jpg">
+                  <source media="(max-width: 1024px)" srcset="./img/projects-man_tablet.jpg">
+                  <img class="projects__image" src="./img/projects-man_desk.jpg" alt="" aria-hidden="true">
+                </picture>
+                <span class="projects__label">#портрет</span>
+              </div>
+              <h2 class="projects__card-title">
+                <a class="projects__card-link" href="#">
+                  В своём стремлении улучшить опыт мы упускаем, что явные...
+                </a>
+              </h2>
+              <time class="projects__date" datetime="05-28">28&nbsp;мая</time>
+            </article>
+          </li>
+          <li class="projects__item projects__item_small">
+            <article class="projects__card">
+              <div class="projects__picture-wrap">
+                <picture class="projects__picture">
+                  <source media="(max-width: 576px)" srcset="./img/projects-still-life_mobile.jpg">
+                  <source media="(max-width: 960px)" srcset="./img/projects-still-life_tablet.jpg">
+                  <source media="(max-width: 1024px)" srcset="./img/projects-still-life_desk-small.jpg">
+                  <img class="projects__image" src="./img/projects-still-life_desk-large.jpg" alt=""
+                       aria-hidden="true">
+                </picture>
+                <span class="projects__label">#предмет</span>
+              </div>
+              <h2 class="projects__card-title">
+                <a class="projects__card-link" href="#">
+                  Равным образом, высокое качество позиционных...
+                </a>
+              </h2>
+              <time class="projects__date" datetime="05-14">14&nbsp;мая</time>
+            </article>
+          </li>
+          <li class="projects__item projects__item_bg">
+            <article class="projects__card">
+              <span class="projects__label">#fuji</span>
+              <div class="projects__text-wrap">
+                <time class="projects__date projects__date_white" datetime="04-09">9&nbsp;апреля</time>
+                <h2 class="projects__subtitle">Cемантический разбор</h2>
+                <p class="projects__text projects__text_paragraph">
+                  В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы
+                </p>
+                <a class="projects__link" href="#" target="_blank" rel="noopener noreferrer"
+                   aria-label="Кнопка-ссылка О проекте">О&nbsp;проекте</a>
+              </div>
+            </article>
+          </li>
+          <li class="projects__item projects__item_bg">
+            <article class="projects__card">
+              <span class="projects__label">#проектзабвение</span>
+              <div class="projects__text-wrap">
+                <time class="projects__date projects__date_white" datetime="03-20">20&nbsp;марта</time>
+                <h2 class="projects__subtitle">Забвение</h2>
+                <p class="projects__text projects__text_paragraph">
+                  Играет важную роль в&nbsp;формировании глубокомысленных рассуждений
+                </p>
+                <a class="projects__link" href="#" target="_blank" rel="noopener noreferrer"
+                   aria-label="Кнопка-ссылка О проекте">О&nbsp;проекте</a>
+              </div>
+            </article>
+          </li>
+          <li class="projects__item projects__item_middle">
+            <article class="projects__card">
+              <div class="projects__picture-wrap">
+                <picture class="projects__picture">
+                  <source media="(max-width: 576px)" srcset="./img/projects-fruit_mobile.jpg">
+                  <source media="(max-width: 1024px)" srcset="./img/projects-fruit_tablet.jpg">
+                  <img class="projects__image" src="./img/projects-fruit_desk.jpg" alt="" aria-hidden="true">
+                </picture>
+                <span class="projects__label">#ретушь</span>
+              </div>
+              <h2 class="projects__card-title">
+                <a class="projects__card-link" href="#">
+                  Как принято считать, многие известные личности и&nbsp;по&nbsp;сей день остаются уделом либералов...
+                </a>
+              </h2>
+              <time class="projects__date" datetime="03-09">9&nbsp;марта</time>
+            </article>
+          </li>
+          <li class="projects__item projects__item_middle">
+            <article class="projects__card">
+              <div class="projects__picture-wrap">
+                <picture class="projects__picture">
+                  <source media="(max-width: 576px)" srcset="./img/projects-woman_mobile.jpg">
+                  <source media="(max-width: 1024px)" srcset="./img/projects-woman_tablet.jpg">
+                  <img class="projects__image" src="./img/projects-woman_desk.jpg" alt="" aria-hidden="true">
+                </picture>
+                <span class="projects__label">#портрет</span>
+              </div>
+              <h2 class="projects__card-title">
+                <a class="projects__card-link" href="#">
+                  С&nbsp;учётом сложившейся международной обстановки, новая модель организационной...
+                </a>
+              </h2>
+              <time class="projects__date" datetime="03-01">1&nbsp;марта</time>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="contacts" id="contacts">
+      <div class="container contacts__container">
+        <h2 class="contacts__title">Контакты</h2>
+        <div class="contacts__map-wrap">
+          <div class="contacts__map-cover"></div>
+          <div class="contacts__content">
+            <div class="contacts__wrap">
+              <h3 class="contacts__map-title">Студия &laquo;High&nbsp;pass&raquo;</h3>
+              <address class="contacts__address">
+                107045, Москва, Даев переулок, дом&nbsp;41, бизнес-центр &laquo;Даев Плаза&raquo;, этаж&nbsp;8, офис
+                &#8470;&nbsp;82
+              </address>
+              <address class="contacts__phone">
+                <a class="contacts__phone-link btn-link" href="tel:+749542423532"
+                   aria-label="Выполнить звонок на номер +749542423532">+7&nbsp;495 424-23-532</a>
+              </address>
+            </div>
+            <button class="btn-link contacts__map-btn js-close-contacts" aria-label="Свернуть блок с адресом"><svg
+                   class="contacts__close-icon">
+                <use xlink:href="./img/sprite.svg#close-icon"></use>
+              </svg></button>
+            <button class="btn-link contacts__map-btn js-open-contacts" aria-label="Развернуть блок с адресом"><svg
+                   class="contacts__arrow-icon">
+                <use xlink:href="./img/sprite.svg#up-arrow-icon"></use>
+              </svg></button>
+          </div>
+          <iframe class="contacts__map"
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3A9cdaeaeab0283809e2089f03e4bbb17110f48482478f20b8eb05b927878f4661&amp;source=constructor"
+                  width="100%" height="100%" frameborder="0" loading="lazy"></iframe>
+        </div>
+        <div class="contacts__right">
+          <h3 class="contacts__subtitle">Оставить заявку</h3>
+          <p class="contacts__paragraph">
+            Оставьте ваши данные, указав в&nbsp;графе &laquo;Комментарий&raquo; желаемые время и&nbsp;дату съёмки или
+            другого мероприятия
+          </p>
+          <form class="contacts__form js-form" action="#" method="post">
+            <div class="contacts__input-wrap">
+              <input class="input contacts__input" id="name" type="text" name="name"
+                     placeholder="Имя"
+                     pattern="^[A-Za-z а-яёА-ЯЁ]+$"
+                     aria-label="Поле для ввода имени">
+              <span class="validity-text">Заполните это поле.</span>
+            </div>
+            <div class="contacts__input-wrap">
+              <input class="input contacts__input" id="contacts-email" type="email"
+                     name="contacts-email" placeholder="Email"
+                     pattern="^(?!.*@.*@.*$)(?!.*@.*--.*\..*$)(?!.*@.*-\..*$)(?!.*@.*-$)((.*)?@.+(\..{1,11})?)$"
+                     aria-label="Поле для ввода адреса электронной почты">
+              <span class="validity-text">Заполните это поле.</span>
+            </div>
+            <textarea class="input contacts__textarea" id="comment" name="comment" spellcheck="true"
+                      placeholder="Комментарий" aria-label="Поле для ввода комментария"></textarea>
+            <button class="btn contacts__btn" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__logo-wrap">
+        <a class="footer__logo-container"
+           aria-label="Логотип сайта Фотостудия Hight pass">
+          <picture class="footer__logo-picture">
+            <source media="(max-width: 576px)" srcset="./img/logo_mobile.png">
+            <source media="(max-width: 1024px)" srcset="./img/logo_tablet.png">
+            <img class="footer__logo-image" src="./img/logo_desk.png" alt="" aria-hidden="true">
+          </picture>
+        </a>
+        <small class="footer__logo-text">Фотостудия High pass<sup class="footer__logo-reg">&reg;</sup>
+          2018&ndash;2020</small>
+      </div>
+      <p class="footer__paragraph">
+        Которая из&nbsp;моих фотографий самая любимая? Та, которую я&nbsp;собираюсь снять завтра.
+        &copy;&nbsp;Имоджен Каннингем
+      </p>
+      <address class="footer__social">
+        <span class="footer__social-text">Больше интересного:</span>
+        <a class="footer__link" href="https://ok.ru/" target="_blank"
+           aria-label="Ссылка-иконка перехода на социальну сеть одноклассиники"><svg class="footer__icon">
+            <use xlink:href="./img/sprite.svg#ok-icon"></use>
+          </svg></a>
+        <a class="footer__link" href="https://vk.com/" target="_blank"
+           aria-label="Ссылка-иконка перехода на социальну сеть вконтакте"><svg class="footer__icon">
+            <use xlink:href="./img/sprite.svg#vk-icon"></use>
+          </svg></a>
+      </address>
+    </div>
+  </footer>
+</body>
+
+</html>

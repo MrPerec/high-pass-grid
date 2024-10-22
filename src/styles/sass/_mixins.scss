@@ -1,0 +1,155 @@
+@import "_variables.scss";
+
+@mixin setContainerStyles {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  /* 1024 adaptive */
+  @media (max-width: 1024px) {
+    padding: 0 31px;
+  }
+
+  /* 768 adaptive */
+  @media (max-width: 960px) {
+    padding: 0 27px;
+  }
+
+  /* 320 adaptive */
+  @media (max-width: 576px) {
+    padding: 0 21px;
+  }
+}
+
+@mixin setLogoStyle {
+  max-width: 191px;
+  max-height: 31px;
+  width: 100%;
+
+  /* adaptive 1024*/
+  @media (max-width: 1024px) {
+    max-width: 166px;
+    max-height: 26.79px;
+  }
+  /* adaptive 320*/
+  @media (max-width: 576px) {
+    max-width: 111.55px;
+    max-height: 18px;
+  }
+}
+
+@mixin setPhoneStyle {
+  padding-left: 22px;
+  font-family: $fontFamilySecond, $fontFamilyBase;
+  font-style: normal;
+  color: $colorBurningOrange;
+  background-image: url("../img/sprite.svg#call");
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: left;
+
+  /* adaptive 320*/
+  @media (max-width: 576px) {
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+@mixin setImageWidth {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@mixin clearListStyles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin clearTitleStyles {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin clearParagraphStyles {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin clearLinkStyles {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin clearBtnStyles {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin setBtnStyles {
+  display: block;
+  padding: 15.5px 22px;
+  font-family: $fontFamilyFirst, $fontFamilyBase;
+  font-weight: 700;
+  color: $colorWhiteSolid;
+  text-align: center;
+
+  @media (max-width: 576px) {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+}
+
+@mixin clearPictureStyles {
+  font-size: 0;
+}
+
+@mixin setTitleStyles {
+  font-family: $fontFamilySecond, $fontFamilyBase;
+  font-weight: 700;
+  font-size: 24px;
+
+  /* adaptive 320*/
+  @media (max-width: 576px) {
+    font-size: 18px;
+  }
+}
+
+@mixin setCardLabel {
+  max-width: 90%;
+  display: block;
+  padding: 6px 15px;
+  font-family: $fontFamilyFirst, $fontFamilyBase;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: $colorWhiteSolid;
+  background-color: $colorMineShaft;
+
+  /* adaptive 320*/
+  @media (max-width: 576px) {
+    padding: 4px 14px;
+    font-size: 12px;
+  }
+}
+
+@mixin setInputStyle {
+  padding: 12px 20px;
+  border: none;
+  font-size: 16px;
+
+  /* adaptive 1024*/
+  @media (max-width: 1024px) {
+    padding: 16px 20px;
+  }
+
+  /* adaptive 320*/
+  @media (max-width: 576px) {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

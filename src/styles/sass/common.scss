@@ -1,0 +1,165 @@
+@import "_variables.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Regular"),
+    url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Bold"), url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  src: local("TTFirsNeue-Regular"),
+    url("../fonts/TTFirsNeue-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Firs Neue";
+  src: local("TTFirsNeue-Bold"),
+    url("../fonts/TTFirsNeue-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Firs Neue";
+  src: local("TTFirsNeue-Medium"),
+    url("../fonts/TTFirsNeue-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  font-family: $fontFamilyFirst, $fontFamilySecond, $fontFamilyBase;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  color: $colorMineShaft;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.btn {
+  background-color: $colorBurningOrange;
+  outline-offset: 0;
+  outline: transparent;
+  transition: background-color $delay, outline $delay;
+}
+.btn:focus {
+  outline: 3px solid $colorGrenadier;
+  background-color: $colorBurningOrange;
+}
+.btn:hover {
+  background-color: $colorTuscany;
+}
+.btn:active {
+  background-color: $colorGrenadier;
+}
+
+.btn-link {
+  border-radius: 1%;
+  color: $colorBurningOrange;
+  fill: $colorWhiteSolid;
+  outline: transparent;
+  outline-offset: 2px;
+  transition: color $delay, fill $delay, outline $delay;
+}
+
+.btn-link:focus {
+  outline: 2px solid $colorGrenadier;
+}
+.btn-link:hover {
+  color: $colorTuscany;
+  fill: $colorTuscany;
+}
+.btn-link:active {
+  color: $colorGrenadier;
+  fill: $colorGrenadier;
+}
+
+.validity-text {
+  position: absolute;
+  padding-top: 3px;
+  // height: 0;
+  width: 120px;
+  visibility: hidden;
+  padding-left: 20px;
+  font-size: 9px;
+  color: $colorRedOrange;
+}
+.validity-text::before {
+  content: "Недопустимый формат";
+  position: absolute;
+  top: 3px;
+  display: block;
+  width: 120px;
+  visibility: hidden;
+  // padding-left: 20px;
+  font-size: 9px;
+  color: $colorRedOrange;
+}
+
+.input {
+  outline: transparent;
+  transition: outline $delay;
+}
+
+.input::placeholder {
+  color: inherit;
+  transition: color $delay;
+}
+.input:hover::placeholder {
+  color: $colorBurningOrange;
+}
+
+.input:focus {
+  outline: 1px solid $colorBurningOrange;
+}
+
+.input:invalid + .validity-text::before {
+  visibility: visible;
+}
+.input:invalid {
+  outline: 1px solid $colorRedOrange;
+}
+
+.input:invalid:placeholder-shown + .validity-text::before {
+  visibility: hidden;
+}

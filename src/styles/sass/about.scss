@@ -1,0 +1,155 @@
+@import "_mixins.scss";
+
+.about {
+  padding-top: 30px;
+  padding-bottom: 67px;
+  background-color: $colorMineShaft;
+
+  &__container {
+    @include setContainerStyles();
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $gridGutter;
+  }
+
+  &__title {
+    @include clearTitleStyles();
+    @include setTitleStyles();
+    margin-bottom: 5px;
+    grid-column: span 2;
+    color: $colorWhiteSolid;
+  }
+
+  &__paragraph {
+    @include clearParagraphStyles();
+    max-width: 630px;
+    line-height: 175%;
+    color: $colorSilver;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    max-width: 630px;
+  }
+
+  &__picture {
+    @include clearPictureStyles();
+    margin-bottom: 25px;
+  }
+
+  &__image {
+    @include setImageWidth();
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    column-gap: $gridGutter;
+  }
+
+  &__subtitle {
+    @include clearTitleStyles();
+    @include setTitleStyles();
+    margin-bottom: 16px;
+    font-family: $fontFamilySecond, $fontFamilyBase;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 92%;
+    color: $colorWhiteSolid;
+  }
+
+  &__input {
+    @include setInputStyle();
+    max-width: 474px;
+    width: 100%;
+    color: $colorWhiteSolid;
+    background-color: $colorTundora;
+  }
+
+  &__input::placeholder {
+    color: $colorSilver;
+  }
+
+  &__btn {
+    @include clearBtnStyles();
+    @include setBtnStyles();
+    max-width: 126px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about {
+    padding-bottom: 81px;
+
+    &__paragraph {
+      max-width: 466px;
+    }
+
+    &__picture {
+      margin-bottom: 21px;
+    }
+
+    &__form {
+      flex-direction: column;
+    }
+
+    &__input {
+      margin-bottom: 20px;
+      max-width: 342px;
+    }
+
+    &__btn {
+      grid-row: 3;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .about {
+    padding-bottom: 62px;
+
+    &__title {
+      margin-bottom: 2px;
+    }
+
+    &__paragraph {
+      margin-top: 3px;
+      max-width: 342px;
+    }
+  }
+}
+
+/* 320 adaptive */
+@media (max-width: 576px) {
+  .about {
+    padding-top: 33px;
+    padding-bottom: 60px;
+
+    &__paragraph {
+      grid-column: span 2;
+      margin-bottom: 24px;
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 178%;
+    }
+
+    &__wrap {
+      grid-column: span 2;
+    }
+
+    &__picture {
+      margin-bottom: 25px;
+    }
+
+    &__subtitle {
+      margin-bottom: 14px;
+      font-size: 18px;
+      line-height: 122%;
+    }
+
+    &__btn {
+      max-width: 115px;
+    }
+  }
+}

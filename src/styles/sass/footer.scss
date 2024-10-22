@@ -1,0 +1,165 @@
+@import "_mixins.scss";
+
+.footer {
+  background-color: $colorMineShaft;
+  padding-top: 24px;
+  padding-bottom: 22px;
+
+  &__container {
+    @include setContainerStyles();
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: start;
+  }
+
+  &__logo-wrap {
+    grid-column: span 3;
+    display: grid;
+    align-content: center;
+    gap: 6px;
+  }
+
+  &__logo-container {
+    @include clearPictureStyles();
+    @include clearLinkStyles();
+    width: max-content;
+  }
+
+  &__logo-image {
+    @include setLogoStyle();
+  }
+
+  &__logo-reg {
+    top: -0.3em;
+    left: 1px;
+  }
+
+  &__logo-text {
+    max-width: 263px;
+    font-family: $fontFamilySecond, $fontFamilyBase;
+    font-size: 14px;
+    color: $colorMercury;
+  }
+
+  &__paragraph {
+    @include clearParagraphStyles();
+    grid-column: 5 / span 4;
+    padding-left: 10px;
+    max-width: 361px;
+    margin-right: auto;
+    font-family: $fontFamilyFirst, $fontFamilyBase;
+    line-height: 137%;
+    color: $colorSilver;
+  }
+
+  &__social {
+    grid-column: 11 / span 2;
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 7px;
+  }
+
+  &__social-text {
+    grid-column: span 2;
+    font-family: $fontFamilyFirst, $fontFamilyBase;
+    font-style: normal;
+    line-height: 137%;
+    color: $colorSilver;
+  }
+
+  &__link {
+    @include clearLinkStyles();
+    outline: transparent;
+  }
+  &__link:nth-child(2) {
+    justify-self: flex-end;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    fill: $colorSilver;
+    transition: fill $delay;
+  }
+
+  &__link:focus &__icon {
+    fill: $colorTuscany;
+  }
+  &__link:hover &__icon {
+    fill: $colorBurningOrange;
+  }
+  &__link:active &__icon {
+    fill: $colorGrenadier;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    &__container {
+      grid-template-columns: repeat(8, 1fr);
+      align-items: center;
+    }
+
+    &__paragraph {
+      grid-column: 4 / span 3;
+    }
+
+    &__social {
+      grid-column: 7 / span 2;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .footer {
+    &__paragraph {
+      display: none;
+    }
+
+    &__logo-wrap {
+      grid-column: span 4;
+    }
+
+    &__social {
+      grid-column: span 4;
+      justify-self: end;
+    }
+  }
+}
+
+/* 320 adaptive */
+@media (max-width: 576px) {
+  .footer {
+    padding-top: 31px;
+    padding-bottom: 94px;
+
+    &__container {
+      position: relative;
+    }
+
+    &__logo-wrap {
+      position: absolute;
+      top: 93px;
+      padding: 14px 0;
+      width: 100%;
+      gap: 3px;
+      grid-column: span 8;
+      justify-items: center;
+      justify-self: center;
+      order: 1;
+      background-color: $colorTundora;
+    }
+
+    &__social {
+      grid-column: span 8;
+      justify-self: center;
+    }
+
+    &__logo-text {
+      font-size: 10px;
+      text-align: center;
+    }
+  }
+}

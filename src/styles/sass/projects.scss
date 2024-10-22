@@ -1,0 +1,332 @@
+@import "_mixins.scss";
+
+.projects {
+  padding-top: 68px;
+  padding-bottom: 34px;
+
+  &__container {
+    @include setContainerStyles();
+  }
+
+  &__title {
+    @include clearTitleStyles();
+    @include setTitleStyles();
+    margin-bottom: 12px;
+    color: $colorMineShaft;
+  }
+
+  &__list {
+    @include clearListStyles();
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $gridGutter;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item_small {
+    grid-column: span 2;
+    min-height: 300px;
+  }
+
+  &__item_bg {
+    grid-column: span 6;
+    min-height: 300px;
+    padding: 22px 7px 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $colorDustyGray;
+    color: $colorWhiteSolid;
+  }
+
+  &__item:nth-child(4) {
+    background-image: url("../img/projects-face_bg_desk-large.jpg");
+  }
+
+  &__item:nth-child(5) {
+    background-image: url("../img/projects-mountains_bg_desk-large.jpg");
+  }
+
+  &__item_middle {
+    grid-column: span 3;
+    min-height: 300px;
+  }
+
+  &__card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__label {
+    @include setCardLabel();
+    position: absolute;
+    top: 7px;
+    right: 7px;
+  }
+
+  &__text-wrap {
+    display: flex;
+    min-height: 100%;
+    max-width: 292px;
+    flex-direction: column;
+    color: $colorWhiteSolid;
+  }
+
+  &__subtitle {
+    @include clearTitleStyles();
+    @include setTitleStyles();
+    margin-bottom: 6px;
+    font-family: $fontFamilySecond, $fontFamilyBase;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  &__picture-wrap {
+    max-height: 184px;
+    margin-bottom: 18px;
+  }
+
+  &__picture {
+    @include clearPictureStyles();
+  }
+
+  &__card-title {
+    @include clearTitleStyles();
+    margin-bottom: auto;
+    color: $colorMineShaft;
+    font-family: $fontFamilyFirst, $fontFamilyBase;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+  }
+
+  &__card-link {
+    @include clearLinkStyles();
+    background-color: transparent;
+    outline: transparent;
+    outline-offset: 0;
+    transition: background-color $delay, color $delay;
+  }
+  &__card-link:focus {
+    background-color: $colorRomantic;
+  }
+  &__card-link:hover {
+    color: $colorBurningOrange;
+  }
+  &__card-link:active {
+    color: $colorGrenadier;
+    background-color: transparent;
+  }
+
+  &__text_paragraph {
+    @include clearParagraphStyles();
+    color: $colorWhiteSolid;
+  }
+
+  &__text {
+    margin-bottom: auto;
+    font-family: $fontFamilyFirst, $fontFamilyBase;
+    line-height: 137%;
+  }
+
+  &__image {
+    @include setImageWidth();
+  }
+
+  &__date {
+    padding-left: 18px;
+    font-family: $fontFamilyFirst, $fontFamilyBase;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 183%;
+    color: $colorDustyGray;
+    background-image: url("../img/sprite.svg#calendar-gray");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 14px 14px;
+  }
+
+  &__date_white {
+    color: $colorWhiteSolid;
+    background-image: url("../img/sprite.svg#calendar-white");
+  }
+
+  &__link {
+    @include clearLinkStyles();
+    @include clearBtnStyles();
+    @include setBtnStyles();
+    padding: 12.5px 19px;
+    max-width: 121px;
+    background-color: transparent;
+    border: 3px solid $colorBurningOrange;
+    outline: transparent;
+    transition: background-color $delay, border $delay;
+  }
+
+  &__link:focus {
+    border: 3px solid $colorBurningOrange;
+    background-color: $colorTuscany;
+  }
+  &__link:hover {
+    background-color: $colorBurningOrange;
+  }
+  &__link:active {
+    background-color: $colorGrenadier;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    &__list {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 285px;
+      grid-auto-rows: 307px;
+      grid-auto-flow: dense;
+      row-gap: 24px;
+    }
+
+    &__item:nth-child(-1n + 2) {
+      grid-column: span 2;
+    }
+
+    &__item:nth-child(3) {
+      grid-column: span 4;
+    }
+
+    &__item_bg {
+      padding-top: 30px;
+      grid-column: span 5;
+    }
+    &__item:nth-child(4) {
+      background-image: url("../img/projects-face_bg_desk-small.jpg");
+    }
+
+    &__item:nth-child(5) {
+      order: 1;
+      background-image: url("../img/projects-mountains_bg_desk-small.jpg");
+    }
+    &__item_middle {
+      min-height: 307px;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .projects {
+    &__list {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto auto auto auto;
+      row-gap: 0;
+    }
+
+    &__item_small {
+      margin-bottom: 25px;
+    }
+
+    &__item:nth-child(3) {
+      grid-column: span 2;
+    }
+
+    &__item_bg {
+      grid-column: span 6;
+    }
+
+    &__item:nth-child(4) {
+      margin-bottom: 30px;
+      background-image: url("../img/projects-face_bg_tablet.jpg");
+    }
+
+    &__item:nth-child(5) {
+      background-image: url("../img/projects-mountains_bg_tablet.jpg");
+    }
+
+    &__item_middle {
+      margin-bottom: 24px;
+    }
+
+    &__image {
+      max-height: 184px;
+    }
+  }
+}
+
+/* 320 adaptive */
+@media (max-width: 576px) {
+  .projects {
+    padding-top: 51px;
+    padding-bottom: 17px;
+
+    &__title {
+      margin-bottom: 15px;
+    }
+
+    &__list {
+      grid-template-rows: auto auto auto auto auto auto auto;
+    }
+
+    &__item {
+      grid-column: span 6;
+    }
+
+    &__item:nth-child(-1n + 3) {
+      grid-column: span 6;
+    }
+
+    &__item:nth-child(3),
+    &__item:nth-child(2) {
+      min-height: 278px;
+    }
+
+    &__item:nth-child(4) {
+      margin-bottom: 24px;
+      background-image: url("../img/projects-face_bg_mobile.jpg");
+    }
+
+    &__item:nth-child(5) {
+      background-image: url("../img/projects-mountains_bg_mobile.jpg");
+    }
+
+    &__item_bg {
+      min-height: 422px;
+    }
+
+    &__item_middle {
+      margin-bottom: 18px;
+    }
+
+    &__card {
+      justify-content: flex-end;
+    }
+
+    &__text-wrap {
+      min-height: 195px;
+      max-width: 214px;
+    }
+
+    &__date_white {
+      margin-bottom: 5px;
+    }
+
+    &__subtitle {
+      margin-bottom: 9px;
+      font-size: 24px;
+    }
+
+    &__text_paragraph {
+      font-size: 14px;
+    }
+
+    &__link {
+      padding: 7px 18px;
+      width: 109px;
+      height: 40px;
+    }
+  }
+}
