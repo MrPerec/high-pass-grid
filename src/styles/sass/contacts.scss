@@ -48,6 +48,12 @@
     background: $colorCoverBg;
   }
 
+  &__map {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+
   &__map-btn {
     @include clearBtnStyles();
     position: absolute;
