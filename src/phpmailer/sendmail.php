@@ -33,7 +33,7 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
   // Настройки вашей почты
   $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера вашей почты
   $mail->Username   = 'mrperec@ya.ru'; // Логин на почте
-  $mail->Password   = 'olxexqnswaxattgb'; // Пароль на почте
+  $mail->Password   = ''; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
