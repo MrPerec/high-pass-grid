@@ -1,6 +1,6 @@
 # high-pass-grid
 Demonstration of layout using grid technologies 
-You can see this landing <a href="http://t951214s.beget.tech/" alt="High Pass site">here</a>
+You can see this landing <a href="http://t951214s.beget.tech/" alt="High Pass site" blank>here</a>
 <p>
 The Highpass website was created using CSS Grid. Tools such as gulp task manager and scss preprocessor were used for layout.
   
