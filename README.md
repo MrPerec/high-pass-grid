@@ -1,15 +1,50 @@
-# high-pass-grid
-Demonstration of layout using grid technologies 
-You can see it <a href="http://t951214s.beget.tech/" alt="High Pass site" target="_blank">here</a>
-<p>
-The Highpass website was created using CSS Grid. Tools such as gulp task manager and scss preprocessor were used for layout.
-  
-The classes were named in accordance with the BEM methodology (English BEM — Block Element Modificator). Interactive elements such as the menu, search form, and validation system were implemented in JavaScript using the green sock animation library. The Yandex Maps constructor was used to create the map.
-  
-During development, the principles of semantics were observed, the code was valid and complied with generally accepted standards (Checking the code using HTML, CSS and HTMLHint validators did not reveal any errors.). The elements on the site became interactive: they reacted to hover, focus and active events. The form was also configured to be sent by email using PHP.
-  
-To get a ready-made version of the site, run the command:
-<code>npm run build</code><br>
-To start the development mode, enter:
-<code>npm run dev</code>
-</p>
+# High Pass
+
+Учебный проект, выполненный по макету [Figma](https://www.figma.com/design/u1WrVmV056NKsEyQjaSTXA/Photo?node-id=0-1&p=f). Цель проекта — закрепить навыки работы с **CSS Grid**, препроцессорами и gulp-сборкой.
+
+## 🌐 Демо
+
+[Перейти на сайт](http://t951214s.beget.tech/)
+
+## 🚀 Технологии
+
+- **HTML5** (семантика)
+- **CSS Grid**
+- **SCSS** (препроцессор)
+- **Методология БЭМ**
+- **gulp** (сборка проекта)
+
+## ✨ Особенности проекта
+
+1. **Pixel Perfect**: Верстка строго по макету.
+2. **Состояния элементов**: Реализованы hover, focus и active состояния для интерактивных элементов.
+3. **Методология БЭМ**: Именование классов соответствует стандартам БЭМ.
+4. **Валидный код**: Проект проходит проверки HTML и CSS валидаторов.
+5. **Автоматизация**: gulp настроен для удобной разработки и сборки.
+
+## Как запустить проект
+
+1. Склонируйте репозиторий:
+
+   ```bash
+   git clone https://github.com/your-username/high-pass.git
+   ```
+
+2. Установите зависимости:
+
+   ```bash
+   npm install
+   ```
+
+3. Запустите проект в режиме разработки:
+
+   ```bash
+   gulp dev
+   ```
+
+4. Для сборки проекта выполните:
+
+   ```bash
+   gulp build
+   ```
+
